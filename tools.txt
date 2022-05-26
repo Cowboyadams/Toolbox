@@ -1,0 +1,42 @@
+Javascript variables
+    1. var: create a global variable (value might change)
+    2. let: create a local variable (value might change)
+    3. const: create a constant (value will not change)
+Math Operators 
+    1. + addition
+    2. - subtraction
+    3. * multiplication
+    4. / division
+    5. % modulo (remainder)
+Logical Operators
+    1. > greater than
+    2. >= greater than or equal to
+    3.< less than
+    4. <= less than or equal to
+    5. === equal to
+    6. !== not equal to
+    7. && and
+    8. || or
+for-loops
+    for (let i =0; i < 5; i++) {
+
+    }
+while-loops
+    while (x < 50) {
+        
+    }
+Arrays
+    var Arr = [1, 2,3]
+Array variables
+   1. .push() allows you to add an item to the end of an array.
+    2. .pop() removes the last item from an array.
+       If you put something in the parentheses, it will remove the item but it will save it to the var that you put in the parentheses
+    4. .shift() removes the first item from an array.
+        Can also put a var in parentheses that it will save it to 
+    5. .unshift() allows you to add an item to the front of an array.
+    6. .slice() makes a shallow copy of the array that it’s chained on to. It takes two arguments, the starting and ending indices of the array you want to copy. The ending index is not included in what is copied. This method does not change the initial array.
+    7. .splice() is the most dynamic of all for editing arrays. It takes 3 arguments:
+        a. The index at which we want to begin editing
+        b. How many items to remove from the array
+        c. Any values to replace at that index
+    8. .length All arrays have a length property by default. As the name would suggest this returns the length of the array. Remember that while arrays are zero indexed, length is not. For example: 
