@@ -1,3 +1,12 @@
+Git & GitHub Commands
+    git init
+        -initializes git in current folder
+    git add .
+        -prepares all files and folders in current folders for a commit
+    git add /users/example/example
+        -prepares specified folder or file for a commit
+    git commit -m "blah blah blah"
+        -creates and saves a snapshot of what you used as a "commit" and creates log based off of what is in quotes
 Javascript variables
     1. var: create a global variable (value might change)
     2. let: create a local variable (value might change)
