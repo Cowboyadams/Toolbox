@@ -1,3 +1,11 @@
-freeCodeCamp:
+Practice
+    freeCodeCamp:
     learn and practice code for freeCodeCamp
     https://www.freecodecamp.org/learn/
+Slack
+    List of 100 slack communities
+    https://standuply.com/The_List_of_1000_Slack_Communities_by_Standuply.pdf
+
+    thousands of discord and slack communities
+    https://drive.google.com/drive/folders/1XkY_pYbm64NI52gKess9lcWrAlLsjCJ5
+    
