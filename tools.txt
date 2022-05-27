@@ -3,10 +3,14 @@ Git & GitHub Commands
         -initializes git in current folder/creates a new git repository
     git add .
         -prepares all files and folders in current folders for a commit
+    git reset
+        -unstages (undos what 'git add . does) staged files
     git add /users/example/example
         -prepares specified folder or file for a commit
     git commit -m "blah blah blah"
         -creates and saves a snapshot of what you used as a "commit" and creates log based off of what is in quotes
+    git commit -am "blah blah blah"
+        -combines the "git add ." and "git commit -m "blah" commands. i.e. Stages and commits in one command
 Javascript variables
     1. var: create a global variable (value might change)
     2. let: create a local variable (value might change)
