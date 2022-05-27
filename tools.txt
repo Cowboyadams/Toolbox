@@ -1,6 +1,6 @@
 Git & GitHub Commands
     git init
-        -initializes git in current folder
+        -initializes git in current folder/creates a new git repository
     git add .
         -prepares all files and folders in current folders for a commit
     git add /users/example/example
