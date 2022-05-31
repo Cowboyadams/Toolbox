@@ -63,6 +63,7 @@ Converting Data Types
         -parseInt()
     3. Converting to a string 
         - string()
+        - ( "string example " + 5 ) will make everything a string
  Checking Conditions
     1. .includes() checks to see if a specified string is contained in another and returns true or false.
     2. .startsWith() checks to see if a string starts with a certain character and returns true or false.
@@ -78,3 +79,50 @@ Manipulating Strings
         - Joining with no argument will automatically put commas into the new string. (I.e. .join())
         - We can put in an empty string to omit the commas. (I.e .join (''))
         - Passing in a space or any character will insert that character between each entry in the array. (I.e. .join(' '))
+Functions
+    function doSomething() {
+        ...
+        }
+
+    Parts:
+        1. function - The function key word. - Indicates that the following block of code is a function.
+        2.  doSomething - The name of the function. - You can name a function whatever you want. Function names should be lowerCamelCase.
+        3. () - Function parameters go inside parentheses. - This function has no parameters. We will explain parameters momentarily.
+        4. { } - Opening and closing curly braces, which represent the body of a function. - Inside of the body is where you will put your code.
+
+    Calling a Function
+        - It is important to know that creating a function does not make it run. It only runs at the time in which it is called. To call a function, simply type the function name, followed by (). If the function has any parameters, you need to pass those values into the ().
+        - Ex. 
+            function logMyName(name) {
+            console.log(name)
+            }
+
+            logMyName('Cameron') // Output: Cameron
+   
+    Return values
+        - In this example, this function returns 16.58 to the call site, which then makes that line of code equivalent to saying purse -= 16.58.
+        - Ex.
+            let purse = 20
+
+            function calculateTotal(item1, item2) {
+            return item1 + item2
+            }
+
+            purse -= calculateTotal(6.59, 9.99)  // updates purse to equal 20 - 16.58
+    Tips:
+        -Try and have your function before (above) where you are trying to invoke it
+Other Function Syntaxesadec
+    1. Function Decralation syntax (how it is explained above)
+        function giveMeFive() {
+        return 5
+        }
+    
+    2. Function Expression syntax
+        const sayHi = function() {
+        return 'Hi!'
+        }
+    
+    3. Arrow syntax
+        const sayBye = () => {
+        return 'Bye!'
+        }
