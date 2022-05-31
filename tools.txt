@@ -53,3 +53,28 @@ Array variables
         b. How many items to remove from the array
         c. Any values to replace at that index
     8. .length All arrays have a length property by default. As the name would suggest this returns the length of the array. Remember that while arrays are zero indexed, length is not. For example: 
+Converting Data Types
+    1. converting to a Boolean: 
+        - Boolean() 
+        - only '0' and '' (no space) will return false values
+    2. Converting to a Number
+        - Number()
+        - +()
+        -parseInt()
+    3. Converting to a string 
+        - string()
+ Checking Conditions
+    1. .includes() checks to see if a specified string is contained in another and returns true or false.
+    2. .startsWith() checks to see if a string starts with a certain character and returns true or false.
+    3. .endsWith() checks to see if a string ends with a certain character and returns true or false.
+Manipulating Strings   
+    1. .trim() takes any whitespace off the beginning and end of a string.
+    2. .toUpperCase() and .toLowerCase() do what they sound like! They’ll make all the letters in a string upper or lower case.
+    3. .replace('x', 'y') will replace the first instance of a string with a new one. (replaces 'x' with y)
+    4. .replaceAll('x', 'y') will replace every instance of a string with a new one (replaces 'x' with 'y')(this will only work with newer versions of node).
+    5. .split() will split a string into multiple strings in an array according to the character we send in.
+        - Passing an empty string to .split() will create a new string for every character including spaces
+    6. .join() will join an array of strings together into one string
+        - Joining with no argument will automatically put commas into the new string. (I.e. .join())
+        - We can put in an empty string to omit the commas. (I.e .join (''))
+        - Passing in a space or any character will insert that character between each entry in the array. (I.e. .join(' '))
