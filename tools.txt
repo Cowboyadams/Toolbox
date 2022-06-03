@@ -39,7 +39,7 @@ while-loops
         
     }
 Arrays
-    var Arr = [1, 2,3]
+    var Arr = [1, 2, 3]
 Array variables
    1. .push() allows you to add an item to the end of an array.
     2. .pop() removes the last item from an array.
@@ -52,7 +52,8 @@ Array variables
         a. The index at which we want to begin editing
         b. How many items to remove from the array
         c. Any values to replace at that index
-    8. .length All arrays have a length property by default. As the name would suggest this returns the length of the array. Remember that while arrays are zero indexed, length is not. For example: 
+    8. .length All arrays have a length property by default. As the name would suggest this returns the length of the array. Remember that while arrays are zero indexed, length is not.
+    9. .reverse Flips the array
 Converting Data Types
     1. converting to a Boolean: 
         - Boolean() 
@@ -111,7 +112,10 @@ Functions
             purse -= calculateTotal(6.59, 9.99)  // updates purse to equal 20 - 16.58
     Tips:
         -Try and have your function before (above) where you are trying to invoke it
-Other Function Syntaxesadec
+Function Callbacks
+    - A callback is a function that is passed to another function and invoked within the outer function
+    - Being a callback doesn’t change anything about a function’s definition, it’s just a different way of using the function
+Other Function Syntaxes
     1. Function Decralation syntax (how it is explained above)
         function giveMeFive() {
         return 5
@@ -126,3 +130,96 @@ Other Function Syntaxesadec
         const sayBye = () => {
         return 'Bye!'
         }
+Higher Order Array methods
+    - these functions built into JavaScript that accept callbacks as arguments
+    - All of these methods loop over the given array and perform actions according to the callback function we create
+    - forEach, map, and filter invoke the callbacks passed to them with up to 3 arguments: element, index, and array (reduce is a little different)
+        1. element stands for each individual item in the array (could be a string, an object, a number, whatever is in the array)
+            - Element is the only required one
+        2. index is the index of the current element
+        3. array is the array that the method was called on
+    1. .forEach
+        - Loops through an array and “for each” element, executes any specified functionality
+        - Does not necessarily modify the original array, but can if the callback is specified to do so
+        - Very similar to a for-loop, except we have easier access to the values and their indexes because of the callback’s parameters
+            example:
+            numArray.forEach(function(element, index){
+            console.log(`${element} is at index ${index}`)
+            })
+    2. .filter 
+        - creates a new array, but with some values filtered out
+        - The callback function needs to return true or false, and will most often return a conditional statement
+        - If that statement evaluates to true the element will be included in the new array
+        - .filter is not destructive (the original array will stay the same)
+    3. .map 
+        - Map does not modify the original array
+        - It returns a copy of the original array, with any changes implemented in the callback applied
+    4. .reduce 
+        - Executes a “reducing” callback function and returns a single value
+        - The callback will be invoked with at least two arguments: the accumulator and the current value (the index and array can also be included as the 3rd and 4th args)
+        - We can set the initial value of the accumulator. If we don’t, it will default to the first value in the array
+        - .reduce is often used to create a total sum, but can be used for other (more advanced) purposes
+    - Methods can be chained together, allowing you to perform multiple operations on one array concisely. Example:
+        const myNum = numArray.filter(num => num > 2).map(num => num * 3).reduce((acc, curr) => acc - curr)
+Objects
+    -syntax
+     const dog = {
+        'name': 'Freida',
+        'color': 'brown/black',
+        'hunger': 40,
+        'mood': 'feisty',
+        'age': 9,
+        };  
+    -how to access values in Objects
+        - console.log(dog.name) (dot notation)
+        - console.log(dog['name']) (bracket notation)
+    - additional syntax
+        -destucturing
+            1. let {age} = dog (creates new variable called dog outside of the object and uses 'age' as its value)
+            2. let  {name, color, age} = dog (creates three new variables with respecive values)
+            3. let {age: spotAge} = dog (creates bew variable called 'spotAge' and uses age in the object as value)
+    -how to loop through an object
+        - for (let attribute in dog) {
+            console.log(`The dog's ${attribute} is ${dog[attribute]}.`);
+            }
+            (this loops through the objects values, naming them and then console.logs the value of said value
+    -how to add values
+        1. dog.nickname = 'Puppers'; (dot notation)
+        2. dog['nickname'] = 'Puppers'; (bracket notation)
+    -how to remove values
+        1. delete dog.hunger 
+Classesz
+    -deffinition:
+        A class is like a factory that knows hoy to make objects of a single type. acts like a blueprint for future objects. also lets you define object behavors or methods
+    -example
+          class Dog {
+         constructor(name, color){
+         this.name = name;
+         this.color = color;
+         } bark() {
+         console.log('Arf! I am', this.name, 'the dog!');
+         }
+            }
+         - 'Dog' names or defines the template for all dogs
+         - 'constructor' allows you to assign data specific to each individual dog
+         - 'bark' is the behavor, that each dog knows
+            < 'this.name' means “get the name of whatever dog is trying to bark right now”
+    - creating objects
+        let dog1 = new Dog('Freida', 'brown');
+        let dog2 = new Dog('Sally', 'pink');
+            (this will create two new dogs, one having the name value of freida and having the color value of brown, and the other have sally and pink to their respective values)
+    - Extending exsisting classes 
+        class Dog {
+        ...
+        }
+        class Puppy extends Dog {
+         constructor(name, color, trainingLevel) {
+           super(name, color)
+
+            this.trainingLevel = trainingLevel
+         }
+
+         levelUp(num) {
+           this.trainingLevel += num
+         }
+        }    
