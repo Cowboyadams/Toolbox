@@ -11,6 +11,7 @@ Git & GitHub Commands
         -creates and saves a snapshot of what you used as a "commit" and creates log based off of what is in quotes
     git commit -am "blah blah blah"
         -combines the "git add ." and "git commit -m "blah" commands. i.e. Stages and commits in one command
+V   V   V   ****JAVASCRIPT****  V   V   V
 Javascript variables
     1. var: create a global variable (value might change)
     2. let: create a local variable (value might change)
@@ -223,3 +224,42 @@ Classesz
            this.trainingLevel += num
          }
         }    
+V   V   V   ****HTML****  V   V   V    
+HTML info
+    - HTML stands for Hyper Text Markup Language
+    - HTML is used to create the infrastructure of a webpage
+    - HTML is NOT a programming language; HTML is considered a “markup” language. Markup languages are used to categorize content
+common elements
+    - <div></div> div tags are used to divide a page into sections, they usually contain other elements
+    - <p></p> paragraph, or p, tags are used to hold text
+    - <h1></h1> heading tags (h1 - h6) are used to define headings, with 1 being the largest
+    - <img/> image tags are used to display images
+    - <footer></footer> the footer of the page
+    - <header></header> the header of the page
+    - <nav></nav> 
+    - <form></form>
+    - <table></table>
+    - <articles></articles>
+    - <section></section> diffines sections on your page
+    - <float></float> floats left, center, or tight
+    - <center></center> centers element
+    - <input /> often inside of forms, make sure to attach lables
+    - <button></button> creates a button
+
+V   V   V   ****CSS****  V   V   V   
+CSS info
+    - Stands for Cascading Style Sheets
+    - CSS is used to style HTML and create layouts
+    - CSS can also respond to some user interactions and create animations
+    - The most basic way to select HTML elements is by their tagname, such as div, h3, or button. Selecting this way will affect all of the elements with that tagname in our HTML.
+        button {
+        background-color: green;
+        }
+    - You can use more than one selector separated by a comma to apply styles to multiple elements.
+        h1, h2, h3 {
+        color: teal;
+         margin: 20px;
+            }
+    - To get even more specific, we can use combinators.
+       1.  > child selector: selects direct children only
+       2.  ' ' descendant selector: selects children, grandchildren, etc.
