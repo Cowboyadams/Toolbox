@@ -245,7 +245,6 @@ common elements
     - <center></center> centers element
     - <input /> often inside of forms, make sure to attach lables
     - <button></button> creates a button
-
 V   V   V   ****CSS****  V   V   V   
 CSS info
     - Stands for Cascading Style Sheets
