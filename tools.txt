@@ -189,7 +189,7 @@ Objects
         2. dog['nickname'] = 'Puppers'; (bracket notation)
     -how to remove values
         1. delete dog.hunger 
-Classesz
+Classes
     -deffinition:
         A class is like a factory that knows hoy to make objects of a single type. acts like a blueprint for future objects. also lets you define object behavors or methods
     -example
@@ -223,7 +223,80 @@ Classesz
          levelUp(num) {
            this.trainingLevel += num
          }
-        }    
+        }
+Running a server on Express
+Forms
+    -create bodies witch are like objets
+    -POST: CREATES DATA
+        - front end:
+            let user = {
+                username: 'Dragon',
+                firstName: 'Joey',
+                lastName: 'Tribiani'
+                }
+        - Back end:
+            app.post('/api/users', (req, res) => {
+                console.log(req.body) // { username: 'Dragon", firstName: 'Joey', lastName: 'Tribiani' }
+                let username = req.body.username
+                let firstName = req.body.firstName
+                let lastName = req.body.lastName
+                res.status(200).send(`Welcome, ${username}! It is nice to meet you ${firstName} ${lastName}.`)
+            })
+            axios.post('/api/users', user).then(...)
+    -PUT: CHANGES EXISTING DATA
+        -front end
+            let userUpdated = {
+            username: 'Dragon2'
+            }axios.put('/api/users/Dragon', userUpdated).then(...)
+        -Back End
+            let users = [user1, user2, user3...]
+            app.put('/api/users/:username', (req, res) => {
+            let existingUsername  = req.params.username
+            let newUsername = req.body.username
+            for (let i = 0; i < users.length; i++) {
+             if (users[i].username === existingUsername) {
+            user[i].username = newUsername
+            res.status(200).send("User updated.")
+            return
+                }
+            }
+            res.status(400).send("User not found.")
+            })
+    -DELETE: DELETES DATA
+        -front end
+            axios.delete('/api/users/Dragon').then(...)
+
+        -Back end
+            let users = [user1, user2, user3...]
+            app.delete('/api/users/:username', (req, res) => {
+            let existingUsername  = req.params.username
+            for (let i = 0; i < users.length; i++) {
+            if (users[i].username === existingUsername) {
+            users.splice(i, 1)
+            res.status(200).send("User deleted.")
+            return
+            }}
+            res.status(400).send("User not found.")})
+
+Boiler Plate
+        const express = require('express')
+        const app = express()
+        app.use(express.json())  // When we want to be able to accept JSON.
+        app.listen(4040, () => console.log('Server running on 4040'))
+Creating Endpoints
+        -Endpoints are where we define how our server, or API, can be interacted with.
+            app.get('/api/users', handlerFunction)
+        -Handler functions determine what functionality should happen when a specific request is made to a given endpoint.
+        -Handler functions will receive request (req) and response (res) object parameters.
+            app.get('/api/users', (req, res) => {
+            functionality goes here
+            }
+        -To create an endpoint that accepts params, a placeholder needs to be created on the server’s endpoint. We denote that param with a colon
+            // server code
+            app.get('/api/users/:id')
+            // front end code
+            axios.get('/api/users/3')
+            .then(...)
 V   V   V   ****HTML****  V   V   V    
 HTML info
     - HTML stands for Hyper Text Markup Language
@@ -237,7 +310,7 @@ common elements
     - <footer></footer> the footer of the page
     - <header></header> the header of the page
     - <nav></nav> 
-    - <form></form>
+    - <form></form> parent element of user input forms (<input type="checkbox"/> for example)
     - <table></table>
     - <articles></articles>
     - <section></section> diffines sections on your page
@@ -245,6 +318,31 @@ common elements
     - <center></center> centers element
     - <input /> often inside of forms, make sure to attach lables
     - <button></button> creates a button
+    - <script></script> how we link files (<script src="./helloWorld.js"></script>) imports code in the same namespace
+Input Elements
+    - <input type="text"/> created a textbox (can create a place holder)
+    - <input type="radio"/> when added to a 'name="example"' it will only let you select one of the radio buttons with the same name
+    - <input type="checkbox"/>
+    - Dropdown menus with <select></select>
+        -<form>
+            Melon Type:
+                <select>
+                 <option value="watermelon">Watermelon</option>
+                <option value="honeydew">Honeydew</option>
+                <option value="cantaloupe">Cantaloupe</option>
+                 </select>
+            </form>
+    -Textareas with <textarea></textarea>
+        <form>
+        <p>Tell us about yourself:</p>
+            <div>
+        <textarea></textarea>
+            </div>
+        </form>
+Javascript web API
+    - alert; alert('Message to pop up');
+    - confirm; confirm('Hey, user, is this ok?');
+    - prompt; prompt('Enter a string');
 V   V   V   ****CSS****  V   V   V   
 CSS info
     - Stands for Cascading Style Sheets
