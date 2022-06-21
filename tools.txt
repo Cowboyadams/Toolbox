@@ -360,3 +360,42 @@ CSS info
     - To get even more specific, we can use combinators.
        1.  > child selector: selects direct children only
        2.  ' ' descendant selector: selects children, grandchildren, etc.
+V V V SQL V V V
+    Types of Data
+        text (must use single quotes)
+        integer (whole numbers)
+        decimal
+        float (only up to 15 decemal places)
+        date (use single quotes)
+        varchar()(defined limit of charecters in a string)
+        Boolean
+        Serial (automatically incrementing integer)
+        primary key (no two rows can be the same value)
+        not null (changes the default option of everthing being NULL)
+    Creating a table
+        CREATE TABLE melons(
+            id SERIAL PRIMARY KEY,
+            name VARCHAR(40) NOT NULL,
+            color VARCHAR(20),
+            price INTEGER
+        );
+   editing/accessing data
+        Insert (adds data to tables)(must provide NULL for missing feilds)
+            example:
+                INSERT INTO melons (color, price, name)
+                VALUES('green', 8, 'Watermelon');
+        Select (lists defined fields) 
+            example: SELECT * FROM melons; ("*" means all columns)
+        UPDATE (Updates selected values) (uses SET to change the items value)
+        DELETE (Deletes selected item)
+    other actions
+        FROM (get data from specified place)
+        WHERE (selects rows whenn a condition is met)(uses operators ie "=", "<", "and")(Match any string: LIKE 'StartsWith%')
+        GROUP BY (returns group of varriables that match your query)
+        ORDER BY (returns in a specified order instead of default random)
+        OFFSET (ofsets where your results will return)
+        limit (determines how many items the query can return)
+
+
+
+
